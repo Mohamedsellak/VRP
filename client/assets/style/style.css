@@ -1,0 +1,10 @@
+#map {
+    height: 90vh;
+}
+
+.btn {
+    position: fixed;
+    right: 45%;
+    bottom: 20px;
+    z-index: 999;
+}

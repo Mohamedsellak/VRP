@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0a6e5fa844d4bb7d895d0de8cdef3e6d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0a6e5fa844d4bb7d895d0de8cdef3e6d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0a6e5fa844d4bb7d895d0de8cdef3e6d = L.map(
+                "map_0a6e5fa844d4bb7d895d0de8cdef3e6d",
+                {
+                    center: [34.0486898693273, -5.0257301330566415],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_07e063c31fc3a6656fabfe443a434ad3 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0a6e5fa844d4bb7d895d0de8cdef3e6d);
+        
+    
+            var marker_f9c56b6874ce54c74d62554ecca7b122 = L.marker(
+                [34.0486898693273, -5.0257301330566415],
+                {}
+            ).addTo(map_0a6e5fa844d4bb7d895d0de8cdef3e6d);
+        
+    
+        var custom_icon_90dc1e56dea18945a7608b6690ca4860 = L.icon({"iconSize": [40, 40], "iconUrl": "data:image/png;base64,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"});
+        marker_f9c56b6874ce54c74d62554ecca7b122.setIcon(custom_icon_90dc1e56dea18945a7608b6690ca4860);
+        
+    
+        var popup_986a1a7d7ac5386a0adee26fa772e708 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0883b01b3c2eca6eab964e60bdce283f = $(`<div id="html_0883b01b3c2eca6eab964e60bdce283f" style="width: 100.0%; height: 100.0%;">0</div>`)[0];
+                popup_986a1a7d7ac5386a0adee26fa772e708.setContent(html_0883b01b3c2eca6eab964e60bdce283f);
+            
+        
+
+        marker_f9c56b6874ce54c74d62554ecca7b122.bindPopup(popup_986a1a7d7ac5386a0adee26fa772e708)
+        ;
+
+        
+    
+    
+            marker_f9c56b6874ce54c74d62554ecca7b122.bindTooltip(
+                `<div>
+                     arrondissement d'Agdal أكدال, Fès ⴼⴰⵙ فاس, Pachalik du Fes باشوية فاس, Préfecture de Fès عمالة فاس, Fès-Meknès ⴼⴰⵙ-ⵎⴽⵏⴰⵙ فاس-مكناس, 30090, Maroc / ⵍⵎⵖⵔⵉⴱ / المغرب
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe410bcbf7750f6ef290f5abae627e5c = L.marker(
+                [34.02181724139988, -5.022811889648438],
+                {}
+            ).addTo(map_0a6e5fa844d4bb7d895d0de8cdef3e6d);
+        
+    
+            var beautify_icon_ab485f2f6607826eb711c635c087ab58 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#00FF00", "borderColor": "#000", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "font-size:14px;", "isAlphaNumericIcon": true, "spin": false, "text": 1, "textColor": "#000"}
+            )
+            marker_fe410bcbf7750f6ef290f5abae627e5c.setIcon(beautify_icon_ab485f2f6607826eb711c635c087ab58);
+        
+    
+        var popup_b1e6afdc4d126994713a7bf89b6f0318 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2f2560e265428c9696c92aa1b0f84e89 = $(`<div id="html_2f2560e265428c9696c92aa1b0f84e89" style="width: 100.0%; height: 100.0%;">1</div>`)[0];
+                popup_b1e6afdc4d126994713a7bf89b6f0318.setContent(html_2f2560e265428c9696c92aa1b0f84e89);
+            
+        
+
+        marker_fe410bcbf7750f6ef290f5abae627e5c.bindPopup(popup_b1e6afdc4d126994713a7bf89b6f0318)
+        ;
+
+        
+    
+    
+            marker_fe410bcbf7750f6ef290f5abae627e5c.bindTooltip(
+                `<div>
+                     École 11 janvier, Rue ZerIab, Hay Badr حي بدر, arrondissement d'Agdal أكدال, Fès ⴼⴰⵙ فاس, Pachalik du Fes باشوية فاس, Préfecture de Fès عمالة فاس, Fès-Meknès ⴼⴰⵙ-ⵎⴽⵏⴰⵙ فاس-مكناس, 30207, Maroc / ⵍⵎⵖⵔⵉⴱ / المغرب
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f98c02e7e684921009d77fa2f15f16ba = L.marker(
+                [34.03162886991801, -5.0010108947753915],
+                {}
+            ).addTo(map_0a6e5fa844d4bb7d895d0de8cdef3e6d);
+        
+    
+            var beautify_icon_d9e2aadbacf8c34d41beba22e4550fab = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#00FF00", "borderColor": "#000", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "font-size:14px;", "isAlphaNumericIcon": true, "spin": false, "text": 2, "textColor": "#000"}
+            )
+            marker_f98c02e7e684921009d77fa2f15f16ba.setIcon(beautify_icon_d9e2aadbacf8c34d41beba22e4550fab);
+        
+    
+        var popup_e2053f4b7fc3bc417d690e4dfd8c78c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56d11f70b6610a9b8086c0601a1ea9fd = $(`<div id="html_56d11f70b6610a9b8086c0601a1ea9fd" style="width: 100.0%; height: 100.0%;">2</div>`)[0];
+                popup_e2053f4b7fc3bc417d690e4dfd8c78c3.setContent(html_56d11f70b6610a9b8086c0601a1ea9fd);
+            
+        
+
+        marker_f98c02e7e684921009d77fa2f15f16ba.bindPopup(popup_e2053f4b7fc3bc417d690e4dfd8c78c3)
+        ;
+
+        
+    
+    
+            marker_f98c02e7e684921009d77fa2f15f16ba.bindTooltip(
+                `<div>
+                     Lycée Moulay Slimane, Rue Ibn El Mourahil, Dar Dbibagh دار دبيغ, Hay Atlas, arrondissement d'Agdal أكدال, Fès ⴼⴰⵙ فاس, Pachalik du Fes باشوية فاس, Préfecture de Fès عمالة فاس, Fès-Meknès ⴼⴰⵙ-ⵎⴽⵏⴰⵙ فاس-مكناس, 30000, Maroc / ⵍⵎⵖⵔⵉⴱ / المغرب
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ad1413ee0aae15b1432d438f3369bd2d = L.marker(
+                [34.03930674434378, -5.043067932128907],
+                {}
+            ).addTo(map_0a6e5fa844d4bb7d895d0de8cdef3e6d);
+        
+    
+            var beautify_icon_bfa25d8a8127203dfc76fa3eced05d5a = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#00FF00", "borderColor": "#000", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "font-size:14px;", "isAlphaNumericIcon": true, "spin": false, "text": 3, "textColor": "#000"}
+            )
+            marker_ad1413ee0aae15b1432d438f3369bd2d.setIcon(beautify_icon_bfa25d8a8127203dfc76fa3eced05d5a);
+        
+    
+        var popup_a1062bfc35af702800eb0478c9b37400 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_de0d7d02997b5d6c26996eebe0c48087 = $(`<div id="html_de0d7d02997b5d6c26996eebe0c48087" style="width: 100.0%; height: 100.0%;">3</div>`)[0];
+                popup_a1062bfc35af702800eb0478c9b37400.setContent(html_de0d7d02997b5d6c26996eebe0c48087);
+            
+        
+
+        marker_ad1413ee0aae15b1432d438f3369bd2d.bindPopup(popup_a1062bfc35af702800eb0478c9b37400)
+        ;
+
+        
+    
+    
+            marker_ad1413ee0aae15b1432d438f3369bd2d.bindTooltip(
+                `<div>
+                     arrondissement de Zouagha زواغة, Fès ⴼⴰⵙ فاس, Pachalik du Fes باشوية فاس, Préfecture de Fès عمالة فاس, Fès-Meknès ⴼⴰⵙ-ⵎⴽⵏⴰⵙ فاس-مكناس, 30207, Maroc / ⵍⵎⵖⵔⵉⴱ / المغرب
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3e59428392f8c0993b3a6ca957230233 = L.marker(
+                [34.023808098342585, -5.045814514160156],
+                {}
+            ).addTo(map_0a6e5fa844d4bb7d895d0de8cdef3e6d);
+        
+    
+            var beautify_icon_91ebc8b01463e7613865cad14bf835d4 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#00FF00", "borderColor": "#000", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "font-size:14px;", "isAlphaNumericIcon": true, "spin": false, "text": 4, "textColor": "#000"}
+            )
+            marker_3e59428392f8c0993b3a6ca957230233.setIcon(beautify_icon_91ebc8b01463e7613865cad14bf835d4);
+        
+    
+        var popup_b076828e075e04a54dc7bc938ccf883f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_24c0cee36ba3fa19385f73b02624d28e = $(`<div id="html_24c0cee36ba3fa19385f73b02624d28e" style="width: 100.0%; height: 100.0%;">4</div>`)[0];
+                popup_b076828e075e04a54dc7bc938ccf883f.setContent(html_24c0cee36ba3fa19385f73b02624d28e);
+            
+        
+
+        marker_3e59428392f8c0993b3a6ca957230233.bindPopup(popup_b076828e075e04a54dc7bc938ccf883f)
+        ;
+
+        
+    
+    
+            marker_3e59428392f8c0993b3a6ca957230233.bindTooltip(
+                `<div>
+                     Zouagha ⵣⵡⴰⵖⴰ زواغة, arrondissement de Zouagha زواغة, Fès ⴼⴰⵙ فاس, Pachalik du Fes باشوية فاس, Préfecture de Fès عمالة فاس, Fès-Meknès ⴼⴰⵙ-ⵎⴽⵏⴰⵙ فاس-مكناس, 30207, Maroc / ⵍⵎⵖⵔⵉⴱ / المغرب
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
